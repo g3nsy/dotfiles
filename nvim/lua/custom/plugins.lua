@@ -1,6 +1,10 @@
 -- custom
 local plugins = {
   {
+    "christoomey/vim-tmux-navigator",
+    lazy = false
+  },
+  {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
