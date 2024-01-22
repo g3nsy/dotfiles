@@ -27,7 +27,7 @@ yellow = "#f9fd75"
 
 [colors.primary]
 background = "#101010"
-foreground = "#66ff66"
+foreground = "#eeeeee"
 
 [cursor]
 blink_interval = 500
