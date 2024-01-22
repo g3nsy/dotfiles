@@ -13,7 +13,7 @@ yellow = "#f9fd80"
 
 [colors.cursor]
 cursor = "#66ff66"
-text = "#101010"
+text = "#eeeeee"
 
 [colors.normal]
 black = "#1c1c1c"
@@ -37,14 +37,14 @@ unfocused_hollow = true
 blinking = "On"
 shape = "Block"
 
-[env]
-WINIT_X11_SCALE_FACTOR = "1"
+# [env]
+# WINIT_X11_SCALE_FACTOR = "1"
 
 [font]
-size = 12
+size = 9
 
 [font.normal]
-family = "Fira Code Nerd Font"
+family = "Hack Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
