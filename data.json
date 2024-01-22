@@ -37,6 +37,7 @@
      ".bashrc": "",
      "hotkeys.json": ".config/musikcube",
      "alacritty.toml": ".config/alacritty",
-     "nvim": ".config"
+     "nvim": ".config",
+     ".tmux.conf": ".tmux.conf"
   }
 }
