@@ -1,0 +1,41 @@
+{
+  "proglist": [
+    "base-devel",
+    "bash-completion",
+    "clang",
+    "cmake",
+    "dosfstools",
+    "feh",
+    "firefox",
+    "flake8",
+    "git",
+    "gparted",
+    "htop",
+    "jdk-openjdk",
+    "neofetch",
+    "neovim",
+    "noto-fonts-emoji",
+    "npm",
+    "perl",
+    "perl-file-mimeinfo",
+    "python-pip",
+    "ranger",
+    "ruby",
+    "rust",
+    "sox",
+    "tcl",
+    "transmission-gtk",
+    "udisks2",
+    "unzip",
+    "vlc",
+    "wget",
+    "zip"
+  ],
+
+  "configs": {
+     ".bashrc": "",
+     "hotkeys.json": ".config/musikcube",
+     "alacritty.toml": ".config/alacritty",
+     "nvim": ".config"
+  }
+}

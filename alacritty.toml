@@ -1,0 +1,89 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#4d4d4d"
+blue = "#5a9dc8"
+cyan = "#69b8ce"
+green = "#70ff70"
+magenta = "#b29fdb"
+red = "#f00060"
+white = "#eeeeee"
+yellow = "#f9fd80"
+
+[colors.cursor]
+cursor = "#66ff66"
+text = "#101010"
+
+[colors.normal]
+black = "#1c1c1c"
+blue = "#4695c8"
+cyan = "#43afce"
+green = "#60ff60"
+magenta = "#a78edb"
+red = "#d81860"
+white = "#f3ebe2"
+yellow = "#f9fd75"
+
+[colors.primary]
+background = "#101010"
+foreground = "#66ff66"
+
+[cursor]
+blink_interval = 500
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 12
+
+[font.normal]
+family = "Fira Code Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "SearchBackward"
+key = "S"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+decorations = "Full"
+opacity = 1.0
+
+[window.padding]
+x = 3
+y = 3

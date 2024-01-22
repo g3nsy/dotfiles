@@ -1,0 +1,17 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.ranger]
+command = "kitty --class scratchpad -e ranger"
+animation = "fromTop"
+class = "kitty-dropterm"
+
+[scratchpads.musikcube]
+command = "kitty --class scratchpad -e musikcube"
+animation = "fromTop"
+class = "kitty-dropterm"
+
+[scratchpads.spotify]
+command = "kitty --class scratchpad -e spotify"
+animation = "fromTop"
+class = "kitty-dropterm"
