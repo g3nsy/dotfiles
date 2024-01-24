@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python ~/Documents/codes/dotfiles/scripts/py/cdpy/tty-countdown.py "$@"

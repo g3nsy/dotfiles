@@ -44,4 +44,5 @@
      "alacritty.toml": ".config/alacritty",
      "nvim": ".config"
   }
+
 }
