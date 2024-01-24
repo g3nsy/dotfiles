@@ -37,12 +37,18 @@
     "zip"
   ],
 
+  "aurproglist": [
+    "musikcube-bin",
+    "drawio-desktop-bin",
+    "ttyper"
+  ],
+
   "configs": {
-     ".bashrc": "",
-     ".tmux.conf": "",
-     "hotkeys.json": ".config/musikcube",
-     "alacritty.toml": ".config/alacritty",
-     "nvim": ".config"
+    ".bashrc": "",
+    ".tmux.conf": "",
+    "hotkeys.json": ".config/musikcube",
+    "alacritty.toml": ".config/alacritty",
+    "nvim": ".config"
   }
 
 }
