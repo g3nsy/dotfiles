@@ -1,0 +1,7 @@
+[user]
+	email = g3nsy@proton.me
+	name = g3nsy
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
