@@ -1,4 +1,4 @@
 __pycache__
-test/
 .flake8/
 .idea/
+.mypy_cache/
