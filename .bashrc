@@ -20,7 +20,6 @@ alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
 alias grep='grep --color=auto'
 alias gpt='tgpt --interactive'
-alias yay='yay && setxkbmap -option "ctrl:nocaps"'
 alias youtube='youtube-viewer'
 
 # enable programmable completion features.
