@@ -2,3 +2,4 @@ __pycache__
 .flake8/
 .idea/
 .mypy_cache/
+youtube-viewer/playlists 
