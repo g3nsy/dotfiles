@@ -14,11 +14,11 @@ exec --no-startup-id picom -b
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec --no-startup-id blueman-applet &
 exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id python ~/.config/i3/alternating_layouts.py
+exec --no-startup-id python ~/Documents/codes/dotfiles/scripts/py/alternating_layouts.py
 exec --no-startup-id sleep 2 && volumeicon
-# exec --no-startup-id optimus-manager-qt
+exec --no-startup-id optimus-manager-qt
 # exec --no-startup-id snixembed --fork
-# exec --no-startup-id python ~/.config/i3/i3smart_workspaces.py
+exec --no-startup-id python ~/.config/i3/i3smart_workspaces.py
 # exec --no-startup-id python ~/.config/i3/xrandr_auto.py
 # exec --no-startup-id xscreensaver -nosplash
 # exec --no-startup-id ~/.config/polybar/launch.sh --hack
@@ -159,6 +159,7 @@ mode "resize" {
 }
 
 Status Bar
+
 bar {
 	status_command i3status --config ~/.config/i3status/i3status.conf
 	position bottom

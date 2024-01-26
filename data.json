@@ -24,6 +24,7 @@
     "perl-file-mimeinfo",
     "pyright",
     "python-pip",
+    "picom",
     "ranger",
     "ruby",
     "ruff",
@@ -31,10 +32,12 @@
     "sox",
     "tcl",
     "tmux",
+    "tk",
     "transmission-gtk",
     "udisks2",
     "unzip",
     "vlc",
+    "volumeicon",
     "wget",
     "xclip",
     "yt-dlp",
@@ -55,8 +58,22 @@
     "hotkeys.json": ".config/musikcube",
     "alacritty.toml": ".config/alacritty",
     "nvim": ".config",
+    "picom.conf": ".config/picom",
     ".gitconfig": "",
-    "youtube-viewer": ".config"
-  }
+    "youtube-viewer": ".config",
+    "config": ".config/i3",
+    "i3status.conf": ".config/i3status",
+    "pip.conf": ".config/pip"
+  },
+
+  "pyglib": [
+    "matplotlib",
+    "customtkinter",
+    "pytubefix",
+    "youtube-dl",
+    "i3ipc",
+    "rich",
+    "textual"
+  ]
 
 }
