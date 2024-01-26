@@ -45,7 +45,7 @@
     "drawio-desktop-bin",
     "musikcube-bin",
     "ttyper",
-    "nchat",
+    "nchat-git",
     "youtube-viewer-git"
   ],
 
@@ -56,7 +56,7 @@
     "alacritty.toml": ".config/alacritty",
     "nvim": ".config",
     ".gitconfig": "",
-    "youtube-viewer": ".config/youtube-viewer"
+    "youtube-viewer": ".config"
   }
 
 }
