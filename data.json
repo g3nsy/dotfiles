@@ -44,6 +44,7 @@
     "drawio-desktop-bin",
     "musikcube-bin",
     "ttyper",
+    "nchat",
     "youtube-viewer-git"
   ],
 
@@ -52,7 +53,9 @@
     ".tmux.conf": "",
     "hotkeys.json": ".config/musikcube",
     "alacritty.toml": ".config/alacritty",
-    "nvim": ".config"
+    "nvim": ".config",
+    ".gitconfig": "",
+    "youtube-viewer": ".config/youtube-viewer"
   }
 
 }
