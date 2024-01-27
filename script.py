@@ -36,6 +36,17 @@ with open(data_path, mode="r", encoding="UTF-8") as f:
     os.system("sudo ln -sfv /usr/bin/nvim /usr/bin/vim")
     os.system(f"pip install {' '.join(data['pyglib'])}")
 
+    theme_path = os.path.join(here, "theme")
+    os.system(
+        f"sudo tar -v -xf {os.path.join(theme_path, 'cursor.tar.gz')} -C /usr/share/icons/"
+    )
+    os.system(
+        f"sudo tar -v -xf {os.path.join(theme_path, 'icons.tar.xz')} -C /usr/share/icons/"
+    )
+    os.system(
+        f"sudo tar -v -xf {os.path.join(theme_path, 'theme.tar.xz')} -C /usr/share/themes/"
+    )
+
 
 for sh_script in os.listdir(path=sh):
     os.system(
