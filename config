@@ -10,19 +10,14 @@ floating_modifier $mod
 
 # startup program
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id picom -b
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-exec --no-startup-id blueman-applet &
 exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id python ~/Documents/codes/dotfiles/scripts/py/alternating_layouts.py
 exec --no-startup-id sleep 2 && volumeicon
-exec --no-startup-id optimus-manager-qt
-# exec --no-startup-id snixembed --fork
+exec --no-startup-id python ~/Documents/codes/dotfiles/scripts/py/alternating_layouts.py
 exec --no-startup-id python ~/.config/i3/i3smart_workspaces.py
-# exec --no-startup-id python ~/.config/i3/xrandr_auto.py
-# exec --no-startup-id xscreensaver -nosplash
-# exec --no-startup-id ~/.config/polybar/launch.sh --hack
-# exec --no-startup-id iwctl device wlan0 set-property Powered off
+# exec --no-startup-id blueman-applet &
+# exec --no-startup-id optimus-manager-qt
+# exec --no-startup-id picom -b
 
 # basic bindsym
 bindsym $mod+Escape exec i3lock
@@ -30,8 +25,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+q kill
-# bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -fn 'FiraCode:pixelsize=14''
-bindsym $mod+d exec rofi -no-config -no-lazy-grab -show drun -theme ~/.config/polybar/hack/scripts/rofi/launcher.rasi
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -fn 'Hack:pixelsize=14''
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
@@ -49,7 +43,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # personal byndsym
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+Return exec --no-startup-id alacritty_launcher
+bindsym $mod+Return exec --no-startup-id ~/.local/bin/alacritty_launcher
 
 # change focus
 bindsym $mod+h focus left
