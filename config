@@ -49,8 +49,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # personal byndsym
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+Shift+m exec --no-startup-id alacritty --command musikcube
+bindsym $mod+Return exec --no-startup-id alacritty_launcher
 
 # change focus
 bindsym $mod+h focus left
@@ -157,8 +156,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym Mod1+r mode "default"
 }
-
-Status Bar
 
 bar {
 	status_command i3status --config ~/.config/i3status/i3status.conf

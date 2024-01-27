@@ -27,7 +27,7 @@ with open(data_path, mode="r", encoding="UTF-8") as f:
 
     os.makedirs(os.path.join(home, ".local/share/fonts"), exist_ok=True)
     os.system(
-        f'unzip {os.path.join(here, "Hack.zip")} -d  {os.path.join(home, ".local/share/fonts")}'
+        f'unzip -o {os.path.join(here, "Hack.zip")} -d  {os.path.join(home, ".local/share/fonts")}'
     )
     os.system("fc-cache -fv")
 
