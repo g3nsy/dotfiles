@@ -44,6 +44,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # personal byndsym
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Return exec --no-startup-id ~/.local/bin/alacritty_launcher
+bindsym $mod+Shift+Return exec --no-startup-id alacritty
 
 # change focus
 bindsym $mod+h focus left
