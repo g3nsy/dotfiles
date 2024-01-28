@@ -8,6 +8,21 @@ data_path = os.path.join(here, "data.json")
 scripts = os.path.join(here, "scripts")
 sh = os.path.join(scripts, "sh")
 
+
+def install_scripts() -> None:
+    for sh_script in os.listdir(path=sh):
+        os.system(
+            f"cp -v {os.path.join(sh, sh_script)} {os.path.join(home, '.local/bin/')}"
+        )
+
+
+def install_theme() -> None:
+    theme_path = os.path.join(here, "theme")
+    for file in ["cursor.tar.gz", "icons.tar.xz", "theme.tar.xz"]:
+        os.system(
+            f"sudo tar -v -xf {os.path.join(theme_path, file)} -C /usr/share/icons/"
+        )
+
 with open(data_path, mode="r", encoding="UTF-8") as f:
     data = json.load(f)
 
@@ -36,19 +51,7 @@ with open(data_path, mode="r", encoding="UTF-8") as f:
     os.system("sudo ln -sfv /usr/bin/nvim /usr/bin/vim")
     os.system(f"pip install {' '.join(data['pyglib'])}")
 
-    theme_path = os.path.join(here, "theme")
-    os.system(
-        f"sudo tar -v -xf {os.path.join(theme_path, 'cursor.tar.gz')} -C /usr/share/icons/"
-    )
-    os.system(
-        f"sudo tar -v -xf {os.path.join(theme_path, 'icons.tar.xz')} -C /usr/share/icons/"
-    )
-    os.system(
-        f"sudo tar -v -xf {os.path.join(theme_path, 'theme.tar.xz')} -C /usr/share/themes/"
-    )
+    install_scripts()
+    install_theme()
 
 
-for sh_script in os.listdir(path=sh):
-    os.system(
-        f"cp -v {os.path.join(sh, sh_script)} {os.path.join(home, '.local/bin/')}"
-    )
