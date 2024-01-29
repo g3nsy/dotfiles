@@ -18,6 +18,24 @@ exec --no-startup-id python ~/.config/i3/i3smart_workspaces.py
 # exec --no-startup-id blueman-applet &
 # exec --no-startup-id optimus-manager-qt
 # exec --no-startup-id picom -b
+#
+# dropdown/scratchpads windows
+# --> python interpreter
+for_window [instance="python"] floating enable
+for_window [instance="python"] resize set 1000, 1400
+for_window [instance="python"] move scratchpad
+for_window [instance="python"] border pixel 5
+exec --no-startup-id alacritty --class python --command python
+bindsym $mod+p [instance="python"] scratchpad show; [instance="python"] move position center
+bindsym $mod+Shift+p exec --no-startup-id alacritty --class python --command python
+# --> alacritty
+for_window [instance="terminal"] floating enable
+for_window [instance="terminal"] resize set 1000, 1400
+for_window [instance="terminal"] move scratchpad
+for_window [instance="terminal"] border pixel 5
+exec --no-startup-id alacritty --class terminal
+bindsym $mod+t [instance="terminal"] scratchpad show; [instance="terminal"] move position center
+bindsym $mod+Shift+t exec --no-startup-id alacritty --class terminal
 
 # basic bindsym
 bindsym $mod+Escape exec i3lock
