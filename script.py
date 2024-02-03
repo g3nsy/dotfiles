@@ -1,7 +1,6 @@
 import os
 import json
 import shutil
-import argparse
 
 
 HOME = os.path.expanduser("~")
