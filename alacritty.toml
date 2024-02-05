@@ -37,9 +37,6 @@ unfocused_hollow = true
 blinking = "On"
 shape = "Block"
 
-# [env]
-# WINIT_X11_SCALE_FACTOR = "1"
-
 [font]
 size = 7
 
