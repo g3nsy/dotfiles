@@ -4,12 +4,12 @@
 ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/globalcontrol.sh
 ThemeSet="${XDG_CONFIG_HOME:-$HOME/.config}/hypr/themes/theme.conf"
-RofiConf="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/steam/gamelauncher_${1}.rasi"
+RofiConf="/home/g3nsy/.config/rofi/steam/gamelauncher_4.rasi"
 
 
 # set steam library
-SteamLib="${XDG_DATA_HOME:-$HOME/.local/share}/Steam/config/libraryfolders.vdf"
-SteamThumb="${XDG_DATA_HOME:-$HOME/.local/share}/Steam/appcache/librarycache"
+SteamLib="/home/g3nsy/.local/share/Steam/config/libraryfolders.vdf"
+SteamThumb="/home/g3nsy/.local/share/Steam/appcache/librarycache"
 
 if [ ! -f $SteamLib ] || [ ! -d $SteamThumb ] || [ ! -f $RofiConf ] ; then
     dunstify "t1" -a "Steam library not found!" -r 91190 -t 2200
