@@ -4,9 +4,11 @@ plugins = ["scratchpads"]
 [scratchpads.terminal]
 command = "kitty --class scratchpad"
 animation = "fromTop"
+margin = 200
 class = "kitty-dropterm"
 
 [scratchpads.musikcube]
 command = "kitty --class scratchpad -e musikcube"
 animation = "fromTop"
+margin = 200
 class = "kitty-dropterm"
