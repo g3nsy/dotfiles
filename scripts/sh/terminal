@@ -1,0 +1,5 @@
+if pgrep -x "tmux" > /dev/null; then
+  alacritty --command tmux attach
+else
+  alacritty --command tmux 
+fi
