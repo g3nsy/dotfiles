@@ -1,5 +1,0 @@
-if pgrep -x "tmux" > /dev/null; then
-  kitty tmux attach
-else
-  kitty tmux 
-fi
