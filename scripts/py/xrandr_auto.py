@@ -3,7 +3,7 @@ import i3smart_workspaces as i3sw
 
 
 def main():
-    if i3sw.is_HDMI_connected():
+    if i3sw.is_hdmi_connected():
         screens = i3sw.get_xrandr_screens()
         edp = screens[0]
         hdmi = screens[1]

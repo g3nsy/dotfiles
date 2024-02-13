@@ -23,9 +23,13 @@ def install_scripts() -> None:
 
 def install_theme() -> None:
     theme_path = os.path.join(HERE, "theme")
-    for file in ["cursor.tar.gz", "icons.tar.xz", "theme.tar.xz"]:
+    for file in ["cursor.tar.gz", "icons.tar.xz"]:
         os.system(
             f"sudo tar -v -xf {os.path.join(theme_path, file)} -C /usr/share/icons/"
+        )
+    for file in ["theme.tar.xz"]:
+        os.system(
+            f"sudo tar -v -xf {os.path.join(theme_path, file)} -C /usr/share/themes"
         )
 
 
@@ -72,9 +76,9 @@ def install_pylibs() -> None:
 
 def main() -> None:
     # install_programs()
-    install_scripts()
-    install_configs()
-    # install_theme()
+    # install_scripts()
+    # install_configs()
+    install_theme()
     # install_fonts()
     # install_pylibs()
     # do_tmux_required_operation()

@@ -1,15 +1,16 @@
-import i3ipc
 import subprocess as sp
 import time
 import xrandr_auto
-import threading
 import logging
+from threading import Thread
+from i3ipc.connection import Connection   # type: ignore
+from i3ipc.replies import WorkspaceReply  # type: ignore
 
 
 logger = logging.getLogger(__name__)
 
 
-def is_HDMI_connected() -> bool:
+def is_hdmi_connected() -> bool:
     comm = sp.run("xrandr | grep HDMI", shell=True, stdout=-1, stderr=-1)
     return comm.stdout.decode().split()[1] == "connected"
 
@@ -23,66 +24,65 @@ def get_xrandr_screens() -> list:
     ]
 
 
-def get_workspaces_by(i3: i3ipc.connection.Connection, screen: str) -> list:
-    return [x for x in i3.get_workspaces() if x.ipc_data["output"] == screen]
+def get_workspaces_by(i3con: Connection, screen: str) -> list:
+    return [x for x in i3con.get_workspaces() if x.ipc_data["output"] == screen]
 
 
 def move_workspaces_to(
-    i3: i3ipc.connection.Connection, workspaces: list, direction: str
+    i3con: Connection, workspaces: list, direction: str
 ) -> None:
     for w in workspaces:
-        i3.command(f"workspace {w.num}")
-        i3.command(f"move workspace to output {direction}")
+        i3con.command(f"workspace {w.num}")
+        i3con.command(f"move workspace to output {direction}")
 
 
 def is_workspace_empty(
-    i3: i3ipc.connection.Connection, workspace: i3ipc.replies.WorkspaceReply
+    i3con: Connection, wkrepy: WorkspaceReply
 ) -> bool:
-    workspace = i3.get_tree().find_by_id(workspace.ipc_data["id"])
-    return not workspace or not workspace.workspace().leaves()
+    wktarget = i3con.get_tree().find_by_id(wkrepy.ipc_data["id"])
+    return not wktarget or not wktarget.workspace().leaves()  # type: ignore
 
 
 def handler_function(
-    i3: i3ipc.connection.Connection,
-    i3thread: threading.Thread,
-    sec: int = 5,
-    direction_HDMI: str = "left",
-    direction_PRIMARY: str = "right",
+    i3con: Connection,
+    i3main_thread: Thread,
+    sleep_time: int = 5,
+    hdmi_direction: str = "left",
+    primary_direction: str = "right"
 ) -> None:
-    HDMI = get_xrandr_screens()[1]
-    left_move = not is_HDMI_connected()
+    hdmi_id = get_xrandr_screens()[1]
+    left_move = not is_hdmi_connected()
     right_move = left_move
-    HDMI_workspaces = None
+    hdmi_workspaces = None
     while True:
-        if not i3thread.is_alive():
+        # i3 reloaded, let's quit
+        if not i3main_thread.is_alive():
             break
-        HDMI_connected = is_HDMI_connected()
-        if not HDMI_connected and not left_move:
-            HDMI_workspaces = get_workspaces_by(i3, HDMI)
-            move_workspaces_to(i3, HDMI_workspaces, direction_HDMI)
+
+        hdmi_connected = is_hdmi_connected()
+
+        if not hdmi_connected and not left_move:
+            hdmi_workspaces = get_workspaces_by(i3con, hdmi_id)
+            move_workspaces_to(i3con, hdmi_workspaces, hdmi_direction)
             sp.run("xrandr --auto", shell=True)
-            right_move = False
-            left_move = True
-        if HDMI_connected and HDMI_workspaces and not right_move:
+            right_move, left_move = (False, True)
+
+        if hdmi_connected and hdmi_workspaces and not right_move:
             xrandr_auto.main()
-            move_workspaces_to(
-                i3,
-                [x for x in HDMI_workspaces if not is_workspace_empty(i3, x)],
-                direction_PRIMARY,
-            )
+            move_workspaces_to(i3con, [x for x in hdmi_workspaces if not is_workspace_empty(i3con, x)], primary_direction)
             time.sleep(3)
-            i3.command("restart")
-            right_move = True
-            left_move = False
-        time.sleep(sec)
+            i3con.command("restart")
+            right_move, left_move = (True, False)
+
+        time.sleep(sleep_time)
 
 
 def main():
     while True:
-        i3 = i3ipc.Connection()
-        thread = threading.Thread(target=i3.main, args=[])
-        thread.start()
-        handler_function(i3, thread)
+        i3con = Connection()
+        i3main_thread = Thread(target=i3con.main, args=[])
+        i3main_thread.start()
+        handler_function(i3con, i3main_thread)
 
 
 if __name__ == "__main__":
