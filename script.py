@@ -22,7 +22,7 @@ def install_scripts() -> None:
 
 
 def install_theme() -> None:
-    theme_path = os.path.join(HOME, "theme")
+    theme_path = os.path.join(HERE, "theme")
     for file in ["cursor.tar.gz", "icons.tar.xz", "theme.tar.xz"]:
         os.system(
             f"sudo tar -v -xf {os.path.join(theme_path, file)} -C /usr/share/icons/"
@@ -71,14 +71,14 @@ def install_pylibs() -> None:
 
 
 def main() -> None:
-    install_programs()
+    # install_programs()
     install_scripts()
     install_configs()
-    install_theme()
-    install_fonts()
-    install_pylibs()
-    do_tmux_required_operation()
-    do_extra_operations()
+    # install_theme()
+    # install_fonts()
+    # install_pylibs()
+    # do_tmux_required_operation()
+    # do_extra_operations()
 
 
 if __name__ == "__main__":

@@ -86,6 +86,10 @@
     "i3ipc",
     "rich",
     "textual"
+  ],
+
+  "fonts": [
+   "Hack.zip"
   ]
 
 }
