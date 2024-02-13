@@ -22,7 +22,7 @@ def install_scripts() -> None:
 
 
 def install_theme() -> None:
-    theme_path = os.path.join(HERE, "theme")
+    theme_path = os.path.join(HERE, "themes")
     for file in ["cursor.tar.gz", "icons.tar.xz"]:
         os.system(
             f"sudo tar -v -xf {os.path.join(theme_path, file)} -C /usr/share/icons/"
