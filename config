@@ -13,9 +13,8 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id sleep 2 && volumeicon
 exec --no-startup-id python ~/Documents/codes/dotfiles/scripts/py/alternating_layouts.py
+exec --no-startup-id dunst
 exec --no-startup-id blueman-applet &
-exec --no-startup-id picom -b
-exec --no-startup-id feh ~/Pictures/wallpaper.jpg
 
 # -- scratchpad -- python --
 for_window [instance="python"] floating enable
