@@ -12,7 +12,7 @@ floating_modifier $mod
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id sleep 2 && volumeicon
-exec --no-startup-id python ~/Documents/codes/dotfiles/scripts/py/alternating_layouts.py
+exec --no-startup-id python ~/Documents/code/dotfiles/scripts/py/alternating_layouts.py
 exec --no-startup-id dunst
 exec --no-startup-id blueman-applet &
 
@@ -23,7 +23,6 @@ for_window [instance="python"] move scratchpad
 for_window [instance="python"] border pixel 5
 bindsym $mod+p [instance="python"] scratchpad show; [instance="python"] move position center
 bindsym $mod+Shift+p exec --no-startup-id alacritty --class python --command python
-exec --no-startup-id alacritty --class python --command python
 
 # -- scratchpad -- terminal --
 for_window [instance="terminal"] floating enable
@@ -40,7 +39,14 @@ for_window [instance="gpt"] move scratchpad
 for_window [instance="gpt"] border pixel 5
 bindsym $mod+g [instance="gpt"] scratchpad show; [instance="gpt"] move position center
 bindsym $mod+Shift+g exec --no-startup-id alacritty --class gpt --command tgpt -i
-exec --no-startup-id alacritty --class gpt --command tgpt -i
+
+# -- scratchpad -- musikcube --
+for_window [instance="musikcube"] floating enable
+for_window [instance="musikcube"] resize set 1000, 1200
+for_window [instance="musikcube"] move scratchpad
+for_window [instance="musikcube"] border pixel 5
+bindsym $mod+g [instance="musikcube"] scratchpad show; [instance="musikcube"] move position center
+bindsym $mod+Shift+g exec --no-startup-id alacritty --class musikcube --command musikcube
 
 # -- bindsym -- i3 --
 bindsym $mod+Escape exec i3lock
@@ -53,8 +59,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m '' -b 'Yes, exit i3' 'i3-msg 
 # -- bindsym -- programs --
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -fn 'Hack:pixelsize=14''
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+Return exec --no-startup-id ~/.local/bin/alacritty_launcher
-bindsym $mod+Shift+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # -- bindsym -- screenshots
 bindsym $mod+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
