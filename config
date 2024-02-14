@@ -45,8 +45,8 @@ for_window [instance="musikcube"] floating enable
 for_window [instance="musikcube"] resize set 1000, 1200
 for_window [instance="musikcube"] move scratchpad
 for_window [instance="musikcube"] border pixel 5
-bindsym $mod+g [instance="musikcube"] scratchpad show; [instance="musikcube"] move position center
-bindsym $mod+Shift+g exec --no-startup-id alacritty --class musikcube --command musikcube
+bindsym $mod+m [instance="musikcube"] scratchpad show; [instance="musikcube"] move position center
+bindsym $mod+Shift+m exec --no-startup-id alacritty --class musikcube --command musikcube
 
 # -- bindsym -- i3 --
 bindsym $mod+Escape exec i3lock
