@@ -15,7 +15,7 @@ def is_hdmi_connected() -> bool:
     return comm.stdout.decode().split()[1] == "connected"
 
 
-def get_xrandr_screens() -> list:
+def get_xscreens() -> list:
     comm = sp.run("xrandr", shell=True, stdout=-1, stderr=-1)
     return [
         x.split()[0]
@@ -50,12 +50,12 @@ def handler_function(
     hdmi_direction: str = "left",
     primary_direction: str = "right"
 ) -> None:
-    hdmi_id = get_xrandr_screens()[1]
+    hdmi_id = get_xscreens()[1]
     left_move = not is_hdmi_connected()
     right_move = left_move
     hdmi_workspaces = None
     while True:
-        # i3 reloaded, let's quit
+        # i3 reloaded, let's quit and relaunch this 
         if not i3main_thread.is_alive():
             break
 

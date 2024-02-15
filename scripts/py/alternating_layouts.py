@@ -1,17 +1,8 @@
-#!/usr/bin/env python3
-
-# olemartinorg
-# https://github.com/olemartinorg/i3-alternating-layout
-
-from threading import Thread
-from i3ipc import Connection, Event
+from i3ipc import Connection, Event  # type: ignore
+import time
 
 
 def find_parent(i3, window_id):
-    """
-        Find the parent of a given window id
-    """
-
     def finder(con, parent):
         if con.id == window_id:
             return parent
@@ -25,11 +16,6 @@ def find_parent(i3, window_id):
 
 
 def set_layout(i3, e):
-    """
-        Set the layout/split for the currently
-        focused window to either vertical or
-        horizontal, depending on its width/height
-    """
     win = i3.get_tree().find_focused()
     parent = find_parent(i3, win.id)
 
@@ -45,9 +31,11 @@ def set_layout(i3, e):
 
 
 def main():
-    i3 = Connection()
-    i3.on(Event.WINDOW_FOCUS, set_layout)
-    i3.main()
+    while True:
+        i3 = Connection()
+        i3.on(Event.WINDOW_FOCUS, set_layout)
+        i3.main()
+        time.sleep(0.5)
 
 
 if __name__ == "__main__":
