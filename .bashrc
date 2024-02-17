@@ -21,6 +21,13 @@ alias l='ls -CF --color=auto'
 alias grep='grep --color=auto'
 alias gpt='tgpt --interactive'
 alias youtube='youtube-viewer'
+repo="~/Documents/calcurse"
+alias calcurse="git -C $repo fetch;
+                git -C $repo pull;
+                calcurse --datadir $repo;
+                git -C $repo add .;
+                git -C $repo commit -m 'update';
+                git -C $repo push"
 
 # enable programmable completion features.
 if ! shopt -oq posix; then
