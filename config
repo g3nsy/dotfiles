@@ -49,7 +49,7 @@ bindsym $mod+m [instance="musikcube"] scratchpad show; [instance="musikcube"] mo
 bindsym $mod+Shift+m exec --no-startup-id alacritty --class musikcube --command musikcube
 
 # -- bindsym -- i3 --
-bindsym $mod+Escape exec i3lock
+bindsym $mod+Escape exec i3lock -c 000000
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+f fullscreen toggle
