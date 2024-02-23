@@ -38,6 +38,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# PS1='[\u@\h \W]\$ '
-
 export PATH=/home/g3nsy/.local/bin:$PATH
+export PATH=$PATH:/home/g3nsy/.spicetify
+
+eval "$(starship init bash)"
