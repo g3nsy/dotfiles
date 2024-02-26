@@ -41,3 +41,6 @@ fi
 # PS1='[\u@\h \W]\$ '
 
 export PATH=/home/g3nsy/.local/bin:$PATH
+
+# require starship
+eval "$(starship init bash)"
