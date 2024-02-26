@@ -39,11 +39,6 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=/home/g3nsy/.local/bin:$PATH
-<<<<<<< HEAD
-
-# require starship
-=======
 export PATH=$PATH:/home/g3nsy/.spicetify
 
->>>>>>> 3752f7f0a8a456aa1b754a12d06ba70186a1bbea
 eval "$(starship init bash)"
