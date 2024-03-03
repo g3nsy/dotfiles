@@ -16,11 +16,12 @@ HISTFILESIZE=200
 shopt -s checkwinsize
 
 # aliases.
-alias la='ls -A --color=auto'
-alias l='ls -CF --color=auto'
+alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias gpt='tgpt --interactive'
 alias youtube='youtube-viewer'
+alias build='python setup.py sdist bdist_wheel'
+alias dotfiles='cd ~/Documents/code/dotfiles/'
 repo="~/Documents/calcurse"
 alias calcurse="git -C $repo fetch;
                 git -C $repo pull;
@@ -42,3 +43,4 @@ export PATH=/home/g3nsy/.local/bin:$PATH
 export PATH=$PATH:/home/g3nsy/.spicetify
 
 eval "$(starship init bash)"
+
